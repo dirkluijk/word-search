@@ -58,6 +58,18 @@ public class GridTest extends TestCase {
                 "xxxx",
                 output
         );
+    }
 
+    public void testWithTwoWords() throws Exception {
+        Grid grid = new Grid(charGenerator, 4, 4);
+
+        String output = grid.build(new String[] {"hoi", "doei"});
+        assertEquals(
+                "hxxx\n" +
+                "oxxx\n" +
+                "ixxx\n" +
+                "doei",
+                output
+        );
     }
 }
