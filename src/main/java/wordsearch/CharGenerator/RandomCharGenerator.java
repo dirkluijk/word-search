@@ -1,11 +1,13 @@
-package wordsearch;
+package WordSearch.CharGenerator;
 
 import java.util.Random;
 
 /**
+ * This class returns a random char between a-z
+ *
  * @author Dirk Luijk
  */
-public class CharGenerator {
+public class RandomCharGenerator implements GeneratorInterface {
 
     public char generateChar()
     {

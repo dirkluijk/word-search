@@ -1,16 +1,18 @@
-package wordsearch;
+package WordSearch;
 
+import WordSearch.CharGenerator.GeneratorInterface;
+import WordSearch.CharGenerator.StaticCharGenerator;
 import junit.framework.TestCase;
 
 /**
  * @author Dirk Luijk
  */
 public class GridTest extends TestCase {
-    private CharGenerator charGenerator;
+    private GeneratorInterface charGenerator;
 
     @Override
     public void setUp() throws Exception {
-        this.charGenerator = new FakeCharGenerator('x');
+        this.charGenerator = new StaticCharGenerator('x');
     }
 
     public void testEmptyGrid() throws Exception {

@@ -1,5 +1,6 @@
-package wordsearch;
+package WordSearch;
 
+import WordSearch.CharGenerator.GeneratorInterface;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -9,7 +10,7 @@ import java.util.Random;
  * @author Dirk Luijk
  */
 public class Grid {
-    private CharGenerator charGenerator;
+    private GeneratorInterface charGenerator;
 
     private final int width;
     private final int height;
@@ -22,8 +23,7 @@ public class Grid {
         HORIZONTAL, DIAGONAL
     }
 
-
-    public Grid(CharGenerator charGenerator, int width, int height) {
+    public Grid(GeneratorInterface charGenerator, int width, int height) {
         this.charGenerator = charGenerator;
         this.width = width;
         this.height = height;
@@ -156,7 +156,7 @@ public class Grid {
         int x = startX, y = startY;
         for (int i = 0; i < word.length(); i++) {
             // if char in field, check if it matches
-            if (chars[x][y] != null && chars[x][y] != String.valueOf(word.charAt(i))) {
+            if (chars[x][y] != null && !chars[x][y].equals(String.valueOf(word.charAt(i)))) {
                 return false;
             }
 
